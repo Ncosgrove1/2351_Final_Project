@@ -114,3 +114,17 @@ const data = [
   
   showQuestion(qIndex);
   submitAnswer();
+
+
+  // for the cheaters // 
+  
+  function loadDoc(url, xFunction) {
+    const xhttp=new XMLHttpRequest();
+    xhttp.onload = function() {xFunction(this);}
+    xhttp.open("GET", url);
+    xhttp.send();
+  }
+  
+  function myFunction(xhttp) {
+    document.getElementById("cheats").innerHTML =  xhttp.responseText;
+  }
